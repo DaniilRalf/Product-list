@@ -6,7 +6,6 @@ interface ProductProps{
 }
 
 
-
 function Product(props: ProductProps) {
 
     let [btnClick, setBtnClick] = useState(false);
@@ -24,7 +23,7 @@ function Product(props: ProductProps) {
         <p className="font-bold">{props.product.title}</p>
         <p className="">{props.product.price}</p>
         {btnClick && <p>{props.product.description}</p>}
-        
+
         <button 
         className={!btnClick ? "py-2 px-4 border bg-yellow-400" : "py-2 px-4 border bg-blue-400"} 
         onClick={() => click()}

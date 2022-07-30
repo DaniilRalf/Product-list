@@ -1,24 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Product from "./components/Product/Product";
+import { data } from '../src/data/data'
+import { ProductInterface } from "./Interfaces/Interfaces";
+
+
 
 function App() {
+
+  let construct = data.map((item: ProductInterface) => {
+    return <Product key={item.id} product={item}></Product>
+  })
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container mx-auto max-w-2xl pt-5">
+      {construct}
     </div>
   );
 }
